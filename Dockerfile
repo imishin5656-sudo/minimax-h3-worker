@@ -2,7 +2,7 @@
 # Base: official RunPod ComfyUI worker (ComfyUI 0.34.0, handler included).
 # Custom nodes are pinned to the exact commits validated on the Pod.
 # Models stay on the network volume.
-FROM runpod/worker-comfyui:5.11.0-base
+FROM runpod/worker-comfyui:5.10.0-base
 
 WORKDIR /comfyui/custom_nodes
 
