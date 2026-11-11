@@ -32,3 +32,8 @@ RUN for t in audio_encoders background_removal checkpoints clip clip_vision conf
 
 WORKDIR /comfyui
 # Handler/CMD are inherited from the base worker image.
+
+# --- v3: return video outputs too, and persist files on the volume ---
+COPY patch_handler.py /tmp/patch_handler.py
+RUN python3 /tmp/patch_handler.py && python3 -m py_compile /handler.py
+RUN rm -rf /comfyui/output && ln -s /runpod-volume/outputs /comfyui/output
