@@ -30,4 +30,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ steps.lc.outputs.owner }}/minimax-h3-worker:latest
+          tags: |
+            ghcr.io/${{ steps.lc.outputs.owner }}/minimax-h3-worker:latest
+            ghcr.io/${{ steps.lc.outputs.owner }}/minimax-h3-worker:v2
